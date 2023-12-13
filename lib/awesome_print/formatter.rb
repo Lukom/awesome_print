@@ -117,6 +117,7 @@ module AwesomePrint
     end
 
     def convert_to_hash(object)
+      return nil if object == nil
       return nil if has_method_accessor?(object)
       return nil if !object.respond_to?(:to_hash) || object.method(:to_hash).arity != 0
 
